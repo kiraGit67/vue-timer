@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer with Vue.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <section class="timers" v-if="!isTimerActive">
+                <button class="timer-button" @click="startTimer(1)">1 Minute</button>
+                <button class="timer-button" @click="startTimer(5)">5 Minutes</button>
+                <button class="timer-button" @click="startTimer(10)">10 Minutes</button>
+                <button class="timer-button" @click="startTimer(15)">15 Minutes</button>
+            </section>
+            <section class="timers" v-else>
+                <button class="timer-button" @click="pauseOrContinueTimer()">{{labelPauseOrContinue}}</button>
+                <button class="timer-button" @click="stopTimer()">Stop</button>
+                <button class="timer-button" @click="resetTimer()">Reset</button>
+            </section>
+        </header>
+        <main>
+            <p>{{remainingTime}}</p>
+        </main>
+    </div>
+    <script src="vue.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
