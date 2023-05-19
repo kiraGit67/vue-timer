@@ -14,6 +14,9 @@ Vue.createApp({
       this.selectedTimer = min;
       this.time = min * 60;
       this.isTimerActive = true;
+      this.startIntervall();
+    },
+    startIntervall() {
       this.interval = setInterval(() => {
         this.time--;
         document.title = this.remainingTime;
@@ -41,15 +44,7 @@ Vue.createApp({
       }
 
       if (!this.isTimerPaused) {
-        this.interval = setInterval(() => {
-          this.time--;
-          document.title = this.remainingTime;
-          if (this.time === 0) {
-            clearInterval(this.interval);
-            this.interval = null;
-            this.isTimerActive = false;
-          }
-        }, 1000);
+        this.startIntervall();
       } else {
         clearInterval(this.interval);
         this.interval = null;
