@@ -60,4 +60,10 @@ p {
   background-color: rgba(255, 255, 255, 0.5);
   color: darkmagenta;
   box-shadow: 2px 2px 0 rgba(255, 255, 255, 0.75);
+  transition: background-color 0.65s steps(5), color 0.65s steps(5);
+}
+
+.timer-button:hover {
+  background-color: darkmagenta;
+  color: white;
 }
